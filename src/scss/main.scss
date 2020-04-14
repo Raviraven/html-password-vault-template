@@ -22,9 +22,19 @@ body {
   border-radius: 0.6rem;
   min-width: 4.5rem;
   border: none;
-  //max-height: 2rem;
   //height: 100%;
   font-size: 1.1rem;
+
+  @media screen and (max-width: $tablet){
+    height: 100%;
+    margin-bottom: 0.2rem;
+  }
+
+  @media screen and (max-width: $phone){
+    height: auto;
+    min-width: 8rem;
+    margin-bottom: 0;
+  }
 }
 
 .main {
@@ -84,6 +94,7 @@ body {
   grid-row: 3;
   display: flex;
   justify-content: center;
+  font-size: .8rem;
 }
 
 .password {
@@ -104,7 +115,21 @@ body {
     height: 100%;
     max-height: $password_buttons_height;
 
-    min-width: 15rem;
+    max-width: 15rem;
+    width: 100%;
+
+    @media screen and (max-width: $tablet) {
+      max-height: 100%;
+      flex-direction: column;
+      max-width: 10rem;
+    }
+
+    @media screen and (max-width: $phone){
+      flex-direction: row;
+      justify-content: space-around;
+      max-width: 100%;
+      min-height: $password_buttons_height_phone;
+    }
   }
 
   &__description {
@@ -127,6 +152,18 @@ body {
     padding: 1rem;
     font-size: 1.5rem;
     align-items: center;
+
+    @media screen and (max-width: $tablet){
+      font-size: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: $tablet){
+    grid-template-columns: 10rem 1fr 10rem;
+  }
+
+  @media screen and (max-width: $phone){
+    display: block;
   }
 }
 
