@@ -11,4 +11,50 @@ html {
 }
 
 body {
+  min-height: 100vh;
+
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: space-between;
+
+  display: grid;
+  grid-template-areas: "header" "content" "footer";
+}
+
+.main{
+  padding: 32px;
+  grid-area: content;
+
+  &__description{
+    &--paragraph{
+      padding-left: 16px;
+    }
+  }
+}
+
+.navigation{
+  grid-area: header;
+  &__button{
+    display: none;
+    border: none;
+    outline: none;
+  }
+ 
+  &__link{
+    text-decoration: none;
+    color: black;
+  }
+
+  &__list{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+  }
+
+}
+
+.footer{
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
 }
