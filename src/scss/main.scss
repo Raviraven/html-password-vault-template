@@ -1,60 +1,145 @@
 @import "_normalize";
 @import "_variables";
 
-
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 body {
   min-height: 100vh;
 
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-
   display: grid;
-  grid-template-areas: "header" "content" "footer";
+  grid-template-rows: 3rem 1fr 3rem;
 }
 
-.main{
-  padding: 32px;
-  grid-area: content;
+.button {
+  border-radius: 0.6rem;
+  min-width: 4.5rem;
+  border: none;
+  //max-height: 2rem;
+  //height: 100%;
+  font-size: 1.1rem;
+}
 
-  &__description{
-    &--paragraph{
-      padding-left: 16px;
+.main {
+  padding: 2rem;
+  grid-row: 2;
+
+  &__description {
+    &--paragraph {
+      padding-left: 1rem;
     }
   }
 }
 
-.navigation{
-  grid-area: header;
-  &__button{
+.navigation {
+  grid-row: 1;
+  &__button {
     display: none;
     border: none;
     outline: none;
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    @media screen and (max-width: $phone) {
+      display: block;
+    }
   }
- 
-  &__link{
+
+  &__item {
+    @media screen and (max-width: $phone) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__link {
     text-decoration: none;
     color: black;
   }
 
-  &__list{
+  &__list {
     display: flex;
     justify-content: space-around;
     list-style: none;
-  }
 
+    @media screen and (max-width: $phone) {
+      flex-direction: column;
+      display: none;
+
+      margin: 0;
+      padding: 1rem;
+    }
+  }
 }
 
-.footer{
-  grid-area: footer;
+.footer {
+  grid-row: 3;
   display: flex;
   justify-content: center;
+}
+
+.password {
+  border: solid black 0.1rem;
+  margin-bottom: 1rem;
+  padding: 0; //1rem;
+  border-radius: 0.5rem;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  display: grid;
+  grid-template-columns: 14rem 1fr 17rem;
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+
+    height: 100%;
+    max-height: $password_buttons_height;
+
+    min-width: 15rem;
+  }
+
+  &__description {
+    padding: 1rem;
+    margin: 0;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: lightcoral;
+
+    padding: 1rem;
+  }
+
+  &__header {
+    background: $password_header;
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    align-items: center;
+  }
+}
+
+.site-header {
+  z-index: 10;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  background: $header;
+
+  @media screen and (max-width: $phone) {
+    min-height: 3rem;
+  }
 }
