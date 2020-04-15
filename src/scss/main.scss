@@ -49,6 +49,10 @@ body {
   padding: 2rem;
   grid-row: 2;
 
+  margin: 0 auto;
+  max-width: $max_main_width;
+  width: 100%;
+
   &__description {
     &--paragraph {
       padding-left: 1rem;
@@ -132,6 +136,8 @@ body {
 
   &__submit{
     min-height: 2.5rem;
+    min-width: 14rem;
+    margin-bottom: 1rem;
   }
 
   @media screen and (max-width:$phone){
