@@ -194,6 +194,18 @@ body {
       max-width: 100%;
       min-height: $password_buttons_height_phone;
     }
+
+    &--link{
+      text-decoration: none;
+      color: $black;
+      display: inline-block;
+      width: 100%;
+    }
+
+    &--submit{
+      outline: none;
+      border: none;
+    }
   }
 
   &__description {

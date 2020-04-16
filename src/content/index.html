@@ -80,9 +80,14 @@
         </p>
         <div class="password__footer">
           <div class="password__buttons">
-            <button class="button password__edit">Edit</button>
-            <button class="button password__remove">Remove</button>
-            <button class="button password__copy">Copy</button>
+            <button class="button password__edit"><a class="password__buttons--link" href="">Edit</a></button>
+            <button class="button password__remove"><a class="password__buttons--link" href="">Remove</a></button>
+            <button class="button password__copy">
+              <form method="post" action="#">
+                <input name="sitepassword_id" type="hidden" value="">
+                <input class="password__buttons--submit" type="submit" value="Copy" />
+            </form>
+            </button>
           </div>
         </div>
       </article>
